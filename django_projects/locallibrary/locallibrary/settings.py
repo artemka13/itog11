@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 # DEBUG = False
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'www.mysite.com']
+ALLOWED_HOSTS = ['sigopka.pythonanywhere.com']
 
 
 # Application definition
@@ -81,7 +81,11 @@ WSGI_APPLICATION = 'locallibrary.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'USER': 'sigopka$LocalLibrary',
+        'PASSWORD': 'sigopka$LocalLibrary',
+        'HOST': 'sigopka.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
     }
 }
 
